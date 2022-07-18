@@ -2,7 +2,7 @@
 
 ## Authors
 * Emilio Popovits Blake (A01027265)
-* Hector R.A.D. ()
+* Hector R.A.D. (A01636166)
 
 ## Description
 This repository contains a Sudoku Solver modeled after the algorithms described by Peter Norvig in his article "[Solving Every Sudoku Puzzle](https://norvig.com/sudoku.html)".
