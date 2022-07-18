@@ -1,10 +1,20 @@
-def cross(A : list, B : list) -> list:
-    ''' Cross product of elements in A and elements in B. '''
+def cross(A : list[str], B : list[str]) -> list[str]:
+    '''
+    Cross product of elements in A and elements in B.
+    
+    :param str A: String with all elements in A to cross
+    :param str B: String with all elements in B to cross
+    '''
     return [ a + b for a in A for b in B ]
 
 
-def getAllSquares(rows : str, cols: str) -> list:
-    ''' Returns list with all possible sudoku squares. '''
+def getAllSquares(rows : str, cols: str) -> list[str]:
+    '''
+    Returns list with all possible sudoku squares.
+    
+    :param str rows: String with all row values
+    :param str cols: String with all column values
+    '''
     # [A1 A2 A3 A4 A5 A6 A7 A8 A9 B1 ... I7 I8 I9]
     squares = cross(rows, cols)
     # squares = []
@@ -14,8 +24,13 @@ def getAllSquares(rows : str, cols: str) -> list:
     return squares
 
 
-def getAllUnits(rows : str, cols: str) -> list:
-    ''' Returns list with all possible units (columns, rows, boxes). '''
+def getAllUnits(rows : str, cols: str) -> list[str]:
+    '''
+    Returns list with all possible units (columns, rows, boxes).
+    
+    :param str rows: String with all row values
+    :param str cols: String with all column values
+    '''
     # All possible columns
     # [A1 B1 C1 D1 E1 F1 G1 H1 I1], [A2 B2 C2 D2 E2 F2 G2 H2 I2], ...
     unitcols = [ cross(rows, number) for number in cols ]
@@ -42,7 +57,7 @@ def getAllUnits(rows : str, cols: str) -> list:
     return unitlist
 
 
-def getSquareUnitsMap(unitlist : list, squares : list) -> dict:
+def getSquareUnitsMap(unitlist : list[str], squares : list[str]) -> dict[str, list]:
     '''
     Returns all units mapped to individual squares (square: [column, row, box]). 
     
@@ -61,7 +76,7 @@ def getSquareUnitsMap(unitlist : list, squares : list) -> dict:
     return units
 
 
-def getAllSquarePeers(units : dict, squares : list) -> dict:
+def getAllSquarePeers(units : dict[str, list], squares : list[str]) -> dict[str, set]:
     '''
     Returns all squares' peers.
     
