@@ -105,7 +105,7 @@ def display(values : dict[str, str], name: str, time : float) -> None:
     for row in rows:
         print(''.join(values[row + col].center(width) + ('|' if col in '36' else '') for col in cols))
         if row in 'CF': print(line)
-    print(f'Solved {name} sudoku puzzle in {round(time, 6)} seconds.')
+    print(f'Solved {name} sudoku puzzle in {round(time, 4)} miliseconds.')
     print()
 
 
@@ -158,7 +158,7 @@ if __name__ == "__main__":
     easy_start = time.time()
     easy_solution = solve(easy_sudoku, numbers, squares, peers)
     easy_end = time.time()
-    easy_time = easy_end - easy_start
+    easy_time = (easy_end - easy_start) * 1000
     display(easy_solution, 'Easy', easy_time)
 
     # Medium sudoku
@@ -166,7 +166,7 @@ if __name__ == "__main__":
     medium_start = time.time()
     medium_solution = solve(medium_sudoku, numbers, squares, peers)
     medium_end = time.time()
-    medium_time = medium_end - medium_start
+    medium_time = (medium_end - medium_start) * 1000
     display(medium_solution, 'Medium', medium_time)
     
     # Hard sudoku
@@ -174,7 +174,7 @@ if __name__ == "__main__":
     hard_start = time.time()
     hard_solution = solve(hard_sudoku, numbers, squares, peers)
     hard_end = time.time()
-    hard_time = hard_end - hard_start
+    hard_time = (hard_end - hard_start) * 1000
     display(hard_solution, 'Hard', hard_time)
     
     # Evil sudoku
@@ -182,7 +182,7 @@ if __name__ == "__main__":
     evil_start = time.time()
     evil_solution = solve(evil_sudoku, numbers, squares, peers)
     evil_end = time.time()
-    evil_time = evil_end - evil_start
+    evil_time = (evil_end - evil_start) * 1000
     display(evil_solution, 'Evil', evil_time)
     
     # World's Hardest sudoku
@@ -198,5 +198,5 @@ if __name__ == "__main__":
     class_start = time.time()
     class_solution = solve(class_sudoku, numbers, squares, peers)
     class_end = time.time()
-    class_time = class_end - class_start
+    class_time = (class_end - class_start) * 1000
     display(class_solution, 'Class', class_time)

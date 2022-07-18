@@ -22,7 +22,7 @@ Easy sudoku puzzle:
 1 9 6 |3 4 8 |5 2 7
 4 2 5 |1 7 9 |8 3 6
 3 8 7 |2 5 6 |9 4 1
-Solved Easy sudoku puzzle in 0.001999 seconds.
+Solved Easy sudoku puzzle in 1.9994 miliseconds.
 ```
 
 ## Requirements
